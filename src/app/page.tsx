@@ -51,7 +51,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-block mb-4">
-                <div className="w-20 h-20 mx-auto bg-primary rounded-full flex items-center justify-center text-white mb-4 animate-bounce">
+                <div className="w-20 h-20 mx-auto bg-purple-600 rounded-full flex items-center justify-center text-white mb-4 animate-bounce">
                   <FaRobot className="w-10 h-10" />
                 </div>
               </div>

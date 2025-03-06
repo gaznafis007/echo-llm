@@ -25,7 +25,7 @@ export function Button({
   const variantStyles = {
     primary: "bg-gray-300 text-slate-800 hover:bg-gray-400 focus:ring-gray-300",
     secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-200",
-    outline: "border border-gray-200 bg-white hover:bg-gray-50 focus:ring-gray-200",
+    outline: "border border-gray-200 bg-white hover:bg-gray-50 focus:ring-gray-200 text-slate-800",
     ghost: "hover:bg-gray-100 focus:ring-gray-200",
   }
 
