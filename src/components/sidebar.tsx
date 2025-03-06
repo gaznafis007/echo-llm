@@ -34,8 +34,8 @@ export function Sidebar() {
   const secondaryNavItems = [
     { name: "Support", icon: <FaQuestionCircle />, href: "/support" },
     { name: "Subscriptions", icon: <FaCreditCard />, href: "/subscriptions" },
-    { name: "API Platform", icon: <FaCode />, href: "/api" },
-    { name: "Discord", icon: <FaDiscord />, href: "/discord" },
+    { name: "API Platform", icon: <FaCode />, href: "https://platform.echogpt.live/" },
+    { name: "Discord", icon: <FaDiscord />, href: "https://discord.com/invite/JG8SXMtaeH" },
   ];
 
   const toggleDarkMode = () => {

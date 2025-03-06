@@ -5,6 +5,7 @@ import { ChatInput } from "./chat-input"
 import { ChatMessage, type Message } from "./chat-message"
 import { FaRobot, FaChevronDown, FaRegClock, FaEllipsisH } from "react-icons/fa"
 import { v4 as uuidv4 } from "uuid"
+import { sendMessage } from "@/libs/funcs"
 
 export function ChatContainer() {
   const [messages, setMessages] = useState<Message[]>([])
@@ -30,11 +31,12 @@ export function ChatContainer() {
     setMessages((prev) => [...prev, userMessage])
 
     // Simulate bot response after a short delay
-    setTimeout(() => {
+    setTimeout(async () => {
+      const botResponse = await getBotResponse(content)
       const botMessage: Message = {
         id: uuidv4(),
-        content: getBotResponse(content),
-        sender: "bot",
+        content: botResponse,
+        sender: "model",
         timestamp: new Date(),
       }
 
@@ -43,27 +45,19 @@ export function ChatContainer() {
   }
 
   // Simple bot response logic
-  const getBotResponse = (message: string): string => {
+  const getBotResponse = async (message: string): Promise<string> => {
     const lowerMessage = message.toLowerCase()
-
-    if (lowerMessage.includes("hello") || lowerMessage.includes("hi")) {
-      return "Hello there! How can I assist you today?"
-    } else if (lowerMessage.includes("help")) {
-      return "I'm here to help! What do you need assistance with?"
-    } else if (lowerMessage.includes("thank")) {
-      return "You're welcome! Is there anything else you need help with?"
-    } else {
-      return 'I understand you said: "' + message + '". How can I help you with that?'
-    }
+    const response = await sendMessage(lowerMessage)
+    return response
   }
 
   return (
     <div className="bg-white rounded-xl border p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-[400px] text-slate-800">
       <div className="flex items-center mb-4">
-        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mr-2 animate-pulse">
-          <FaRobot className="w-5 h-5 text-red-500" />
+        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-purple-600 mr-2 animate-pulse">
+          <FaRobot className="w-5 h-5" />
         </div>
-        <span className="font-medium text-purple-700">EchoGPT</span>
+        <span className="font-medium">EchoGPT</span>
         <FaChevronDown className="w-4 h-4 ml-2" />
       </div>
 

@@ -23,7 +23,7 @@ export function Button({
     "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 relative overflow-hidden"
 
   const variantStyles = {
-    primary: "bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-primary",
+    primary: "bg-gray-300 text-slate-800 hover:bg-gray-400 focus:ring-gray-300",
     secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-200",
     outline: "border border-gray-200 bg-white hover:bg-gray-50 focus:ring-gray-200",
     ghost: "hover:bg-gray-100 focus:ring-gray-200",

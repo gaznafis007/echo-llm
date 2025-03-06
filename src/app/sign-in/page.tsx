@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo";
 import {
   FaGoogle,
-  FaTwitter,
   FaGithub,
   FaArrowLeft,
   FaCheck,

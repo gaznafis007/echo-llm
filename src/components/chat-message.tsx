@@ -3,7 +3,7 @@ import { FaRobot, FaUser } from "react-icons/fa"
 export interface Message {
   id: string
   content: string
-  sender: "user" | "bot"
+  sender: "user" | "model"
   timestamp: Date
 }
 
@@ -12,7 +12,7 @@ interface ChatMessageProps {
 }
 
 export function ChatMessage({ message }: ChatMessageProps) {
-  const isBot = message.sender === "bot"
+  const isBot = message.sender === "model"
 
   return (
     <div className={`flex ${isBot ? "justify-start" : "justify-end"} mb-4`}>
@@ -22,7 +22,7 @@ export function ChatMessage({ message }: ChatMessageProps) {
         >
           {isBot ? <FaRobot className="w-5 h-5" /> : <FaUser className="w-5 h-5" />}
         </div>
-        <div className={`py-2 px-4 rounded-2xl ${isBot ? "bg-gray-100 text-gray-800" : "bg-primary text-white"}`}>
+        <div className={`py-2 px-4 rounded-2xl ${isBot ? "bg-gray-100 text-gray-800" : "bg-purple-600 text-white"}`}>
           <p className="text-sm">{message.content}</p>
           <p className="text-xs mt-1 opacity-70">
             {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
