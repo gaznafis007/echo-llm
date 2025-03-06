@@ -20,7 +20,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 btn-hover-effect"
+    "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 relative overflow-hidden"
 
   const variantStyles = {
     primary: "bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-primary",
@@ -43,7 +43,7 @@ export function Button({
       {...props}
     >
       {leftIcon && <span className="mr-2">{leftIcon}</span>}
-      {children}
+      <span className="relative z-10">{children}</span>
       {rightIcon && <span className="ml-2">{rightIcon}</span>}
     </button>
   )
