@@ -23,7 +23,7 @@ export function Logo({ size = "md" }: LogoProps) {
       <div className="w-10 h-10 mr-2 rounded-lg bg-primary flex items-center justify-center text-white transition-all duration-300 group-hover:rotate-6">
         <FaRobot className={`${iconSizes[size]}`} />
       </div>
-      <span className="bg-gradient-to-r from-purple-600 to-violet-500 bg-clip-text text-transparent">EchoGPT</span>
+      <span className="bg-gradient-to-r from-purple-600 to-violet-500 bg-clip-text text-transparent">EchoLLM</span>
     </Link>
   )
 }

@@ -57,7 +57,7 @@ export function ChatContainer() {
         <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-purple-600 mr-2 animate-pulse">
           <FaRobot className="w-5 h-5" />
         </div>
-        <span className="font-medium">EchoGPT</span>
+        <span className="font-medium">EchoLLM</span>
         <FaChevronDown className="w-4 h-4 ml-2" />
       </div>
 

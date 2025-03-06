@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { FaRocket, FaBrain, FaRobot, FaLightbulb, FaCheck, FaStar, FaShoppingCart, FaArrowRight } from "react-icons/fa"
 
+
 export default function StorePage() {
   // Sample store items
   const plans = [
@@ -155,7 +156,7 @@ export default function StorePage() {
                   </ul>
 
                   <Button
-                    variant={plan.buttonVariant as any}
+                    variant={plan.buttonVariant as "primary" | "secondary" | "outline" | "ghost"}
                     fullWidth
                     disabled={plan.disabled}
                     className={`mt-auto ${plan.buttonVariant === "primary" ? "bg-purple-600 text-white hover:bg-purple-700" : "border border-gray-200 hover:bg-gray-50"}`}
